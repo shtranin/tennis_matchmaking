@@ -58,8 +58,8 @@ public class MyStatisticButton implements Command {
             }
 
             InlineKeyboardButton backButton = new InlineKeyboardButton();
-            backButton.setText("Назад к таблице");
-            backButton.setCallbackData("/showTable");
+            backButton.setText("Назад к меню");
+            backButton.setCallbackData("/menu");
             List<InlineKeyboardButton> innerList = new ArrayList<>();
             innerList.add(backButton);
             overList.add(innerList);

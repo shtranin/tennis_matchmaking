@@ -42,10 +42,18 @@ public class SettingsButtonCommand implements Command {
         InlineKeyboardButton deleteMyRecordButton = new InlineKeyboardButton();
         deleteMyRecordButton.setText("Удалить игрока");
         deleteMyRecordButton.setCallbackData("/deleteUser");
-        List<InlineKeyboardButton> list = new ArrayList<>();
-        list.add(renameButton);
-        list.add(deleteMyRecordButton);
-        overList.add(list);
+
+        InlineKeyboardButton backToMenuButton = new InlineKeyboardButton();
+        backToMenuButton.setText("Назад к меню");
+        backToMenuButton.setCallbackData("/menu");
+
+        List<InlineKeyboardButton> list1 = new ArrayList<>();
+        List<InlineKeyboardButton> list2 = new ArrayList<>();
+        list1.add(renameButton);
+        list1.add(deleteMyRecordButton);
+        list2.add(backToMenuButton);
+        overList.add(list1);
+        overList.add(list2);
         InlineKeyboardMarkup markup = new InlineKeyboardMarkup(overList);
 
         Long userId = Bot.getPlayerIdFromUpdate(update);

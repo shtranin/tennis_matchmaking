@@ -458,3 +458,177 @@ Daniil player 325533383 kefx 2022/05/12 14:13:25 \
 Daniil /showTable 2022/05/12 14:15:33 \
 Daniil /menu 2022/05/12 14:15:38 \
 Daniil 1 2022/05/12 17:23:03 \
+Daniil 1 2022/05/13 13:21:02 \
+Daniil /start 2022/05/13 13:21:25 \
+Daniil /info 2022/05/13 13:21:34 \
+Daniil 1 2022/05/13 13:24:34 \
+Daniil 1 2022/05/13 13:24:45 \
+Daniil /info 2022/05/13 13:24:48 \
+Daniil /info 2022/05/13 13:24:52 \
+Daniil /start 2022/05/13 13:25:12 \
+Daniil /info 2022/05/13 13:25:19 \
+Daniil /showTable 2022/05/13 13:25:32 \
+Daniil /menu 2022/05/13 13:25:46 \
+Daniil nothing 2022/05/13 13:25:49 \
+Daniil /settings 2022/05/13 13:26:09 \
+Daniil /deleteUser 2022/05/13 13:26:10 \
+Daniil /finallyDelete 2022/05/13 13:26:12 \
+Daniil /menu 2022/05/13 13:26:33 \
+Daniil /menu 2022/05/13 13:32:22 \
+Daniil nothing 2022/05/13 13:32:43 \
+Daniil /statistic 2022/05/13 13:32:49 \
+Daniil /showTable 2022/05/13 13:33:20 \
+Daniil /menu 2022/05/13 13:33:22 \
+Daniil /statistic 2022/05/13 13:33:24 \
+Daniil /showTable 2022/05/13 13:33:29 \
+Daniil /menu 2022/05/13 13:34:19 \
+Daniil /registration 2022/05/13 13:34:22 \
+Daniil 123 2022/05/13 13:34:27 \
+Daniil /showTable 2022/05/13 13:34:30 \
+Daniil /menu 2022/05/13 13:35:16 \
+Daniil /info 2022/05/13 13:43:07 \
+Daniil /start 2022/05/13 13:59:59 \
+Daniil /info 2022/05/13 14:00:53 \
+Daniil /showTable 2022/05/13 14:01:02 \
+Daniil /menu 2022/05/13 14:01:11 \
+Daniil /createGame 2022/05/13 14:01:16 \
+Daniil /menu 2022/05/13 14:01:29 \
+Daniil /settings 2022/05/13 14:01:35 \
+Daniil /rename 2022/05/13 14:01:36 \
+Daniil kefx 2022/05/13 14:01:39 \
+Daniil /start 2022/05/13 14:05:45 \
+Daniil /start 2022/05/13 14:07:43 \
+axtox /start 2022/05/13 14:15:27 \
+axtox /registration 2022/05/13 14:15:50 \
+axtox axtox 2022/05/13 14:16:00 \
+axtox /showTable 2022/05/13 14:16:03 \
+axtox /menu 2022/05/13 14:16:08 \
+axtox /statistic 2022/05/13 14:16:13 \
+axtox /info 2022/05/13 14:16:17 \
+axtox nothing 2022/05/13 14:16:22 \
+Daniil /showTable 2022/05/13 14:27:23 \
+Daniil /menu 2022/05/13 14:27:30 \
+Daniil /statistic 2022/05/13 14:27:31 \
+Daniil /menu 2022/05/13 14:27:38 \
+Daniil /settings 2022/05/13 14:28:53 \
+Daniil /menu 2022/05/13 14:34:03 \
+Daniil /settings 2022/05/13 14:34:05 \
+Daniil /menu 2022/05/13 14:34:58 \
+Daniil /settings 2022/05/13 14:34:59 \
+Daniil /menu 2022/05/13 14:35:01 \
+axtox /showTable 2022/05/13 15:49:54 \
+axtox player 21381613 axtox 2022/05/13 15:50:01 \
+axtox player 325533383 kefx 2022/05/13 15:50:05 \
+axtox /showTable 2022/05/13 15:50:17 \
+axtox /menu 2022/05/13 15:50:18 \
+axtox /info 2022/05/13 15:50:24 \
+axtox /statistic 2022/05/13 15:50:28 \
+axtox /settings 2022/05/13 15:50:30 \
+axtox /menu 2022/05/13 15:50:48 \
+axtox /settings 2022/05/13 15:50:55 \
+axtox /rename 2022/05/13 15:50:57 \
+axtox Антон 2022/05/13 15:52:00 \
+axtox /createGame 2022/05/13 15:52:05 \
+axtox rival 325533383 kefx 2022/05/13 15:52:14 \
+axtox winner 21381613 Антон 325533383 kefx 2022/05/13 15:52:38 \
+Daniil cancel 21381613 Антон 325533383 kefx 2022/05/13 15:52:50 \
+axtox /menu 2022/05/13 15:53:03 \
+axtox /createGame 2022/05/13 15:53:05 \
+axtox rival 325533383 kefx 2022/05/13 15:53:07 \
+axtox winner 21381613 Антон 325533383 kefx 2022/05/13 15:53:08 \
+Daniil accept 21381613 Антон 325533383 kefx 2022/05/13 15:53:10 \
+axtox /menu 2022/05/13 15:53:18 \
+axtox /statistic 2022/05/13 15:53:22 \
+axtox nothing 2022/05/13 15:53:28 \
+axtox /menu 2022/05/13 15:53:41 \
+axtox /showTable 2022/05/13 15:53:43 \
+axtox /menu 2022/05/13 15:54:24 \
+axtox /showTable 2022/05/13 15:54:35 \
+axtox /menu 2022/05/13 15:56:06 \
+axtox /statistic 2022/05/13 15:56:42 \
+axtox nothing 2022/05/13 15:56:53 \
+axtox /menu 2022/05/13 15:58:12 \
+axtox /showTable 2022/05/13 16:12:28 \
+axtox /menu 2022/05/13 16:12:33 \
+axtox /menu 2022/05/13 16:12:57 \
+axtox /showTable 2022/05/13 16:13:00 \
+axtox /menu 2022/05/13 16:13:02 \
+axtox /settings 2022/05/13 16:13:03 \
+axtox /menu 2022/05/13 16:13:04 \
+axtox /statistic 2022/05/13 16:13:07 \
+axtox /menu 2022/05/13 16:13:09 \
+axtox /settings 2022/05/13 16:13:18 \
+axtox /rename 2022/05/13 16:13:21 \
+axtox 1 2022/05/13 16:13:22 \
+axtox /showTable 2022/05/13 16:17:23 \
+axtox player 325533383 kefx 2022/05/13 16:17:26 \
+axtox /showTable 2022/05/13 16:18:33 \
+axtox /menu 2022/05/13 16:18:55 \
+axtox /statistic 2022/05/13 16:18:57 \
+axtox /menu 2022/05/13 16:19:02 \
+axtox /showTable 2022/05/13 16:19:04 \
+axtox player 325533383 kefx 2022/05/13 16:19:06 \
+axtox /showTable 2022/05/13 16:19:09 \
+axtox /menu 2022/05/13 16:19:22 \
+Daniil /showTable 2022/05/14 21:19:36 \
+Daniil /menu 2022/05/14 21:19:45 \
+Daniil /statistic 2022/05/14 21:19:50 \
+Daniil /menu 2022/05/14 21:20:03 \
+Daniil /statistic 2022/05/14 21:22:53 \
+Daniil /menu 2022/05/14 21:23:18 \
+Daniil /showTable 2022/05/14 21:23:29 \
+Daniil player 325533383 kefx 2022/05/14 21:23:46 \
+Daniil /showTable 2022/05/14 21:23:48 \
+Daniil /menu 2022/05/14 21:23:51 \
+Daniil /info 2022/05/14 21:23:56 \
+Daniil /showTable 2022/05/14 21:24:11 \
+Daniil /menu 2022/05/14 21:25:16 \
+Daniil /showTable 2022/05/14 21:25:19 \
+Daniil /menu 2022/05/14 21:25:32 \
+Daniil /statistic 2022/05/14 21:25:37 \
+Daniil /menu 2022/05/14 21:25:47 \
+Daniil /showTable 2022/05/14 21:25:49 \
+Daniil player 21381613 1 2022/05/14 21:25:52 \
+Daniil /showTable 2022/05/14 21:26:03 \
+Daniil /menu 2022/05/14 21:26:07 \
+Daniil /statistic 2022/05/14 21:26:16 \
+Daniil /menu 2022/05/14 21:26:21 \
+Daniil /showTable 2022/05/14 21:26:55 \
+Daniil player 3 soarer 2022/05/14 21:26:59 \
+Daniil /menu 2022/05/14 21:27:53 \
+Daniil /showTable 2022/05/14 21:27:58 \
+Daniil player 325533383 kefx 2022/05/14 21:28:02 \
+Daniil /showTable 2022/05/14 21:28:05 \
+Daniil 1 2022/05/14 21:28:10 \
+Daniil 1 2022/05/14 21:28:11 \
+Daniil 1 2022/05/14 21:28:11 \
+Daniil 1 2022/05/14 21:28:11 \
+Daniil 1 2022/05/14 21:28:12 \
+Daniil 1 2022/05/14 21:28:12 \
+Daniil /menu 2022/05/14 21:28:14 \
+Daniil /showTable 2022/05/14 21:28:17 \
+Daniil player 21381613 1 2022/05/14 21:28:19 \
+Daniil /showTable 2022/05/14 21:28:25 \
+Daniil 1 2022/05/14 21:29:10 \
+Daniil 1 2022/05/14 21:29:11 \
+Daniil 1 2022/05/14 21:29:11 \
+Daniil 1 2022/05/14 21:29:11 \
+Daniil /start 2022/05/16 16:58:04 \
+Daniil /showTable 2022/05/16 16:58:31 \
+Daniil player 325533383 kefx 2022/05/16 16:58:35 \
+Daniil /showTable 2022/05/16 16:58:42 \
+Daniil /menu 2022/05/16 16:58:46 \
+Daniil /statistic 2022/05/16 16:58:48 \
+Daniil nothing 2022/05/16 16:58:50 \
+Daniil /menu 2022/05/16 16:58:52 \
+Daniil /showTable 2022/05/16 16:58:55 \
+Daniil player 5 zaver 2022/05/16 16:58:59 \
+Daniil player 325533383 kefx 2022/05/16 16:59:01 \
+Daniil /showTable 2022/05/16 16:59:06 \
+Daniil /menu 2022/05/16 16:59:12 \
+Daniil /statistic 2022/05/16 17:01:20 \
+Daniil /menu 2022/05/16 17:01:29 \
+Daniil /createGame 2022/05/16 17:18:35 \
+Daniil /menu 2022/05/16 17:29:23 \
+Daniil /showTable 2022/05/17 00:48:11 \
+Daniil /menu 2022/05/17 00:48:13 \

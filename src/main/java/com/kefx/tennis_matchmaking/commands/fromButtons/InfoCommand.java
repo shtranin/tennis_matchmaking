@@ -24,7 +24,9 @@ public class InfoCommand implements Command {
     @Override
     public void execute(Update update) {
         deleteMessageService.deleteMessage(update);
-        sendMessageService.sendMessage(update,"tut infa how it workds");
+        sendMessageService.sendMessage(update,"tut infa how it works");
+
+
         redirector.redirectAtCommand("/menu",update);
     }
 }

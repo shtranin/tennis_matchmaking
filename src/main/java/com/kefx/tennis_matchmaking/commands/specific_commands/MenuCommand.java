@@ -3,6 +3,7 @@ package com.kefx.tennis_matchmaking.commands.specific_commands;
 import com.kefx.tennis_matchmaking.Bot;
 import com.kefx.tennis_matchmaking.commands.base.Command;
 import com.kefx.tennis_matchmaking.documents.UserStatementDocument;
+import com.kefx.tennis_matchmaking.entity.UserEntity;
 import com.kefx.tennis_matchmaking.repo.UserStatementRepo;
 import com.kefx.tennis_matchmaking.services.other.DeleteMessageService;
 import com.kefx.tennis_matchmaking.services.withDB.UserDBService;
@@ -77,7 +78,10 @@ public class MenuCommand implements Command {
         list1.add(button1);
         list1.add(button2);
 
-        int currentUserRating = userDBService.getById(userId).getRating();
+        int currentUserRating = 0;
+        if(userDBService.isIdPresent(userId)){
+            currentUserRating = userDBService.getById(userId).getRating();
+        }
         InlineKeyboardButton button3 = new InlineKeyboardButton();
         button3.setText(currentUserRating+"");
         button3.setCallbackData("nothing");

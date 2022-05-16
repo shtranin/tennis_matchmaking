@@ -1,7 +1,7 @@
 package com.kefx.tennis_matchmaking.commands.base;
 
 import com.google.common.collect.ImmutableMap;
-import com.kefx.tennis_matchmaking.commands.PhaseCommand.TakingNameCommand;
+import com.kefx.tennis_matchmaking.commands.phaseCommand.TakingNameCommand;
 import com.kefx.tennis_matchmaking.commands.fromButtons.*;
 import com.kefx.tennis_matchmaking.commands.specific_commands.*;
 import com.kefx.tennis_matchmaking.documents.UserStatementDocument;

@@ -1,4 +1,4 @@
-package com.kefx.tennis_matchmaking.commands.PhaseCommand;
+package com.kefx.tennis_matchmaking.commands.phaseCommand;
 
 import com.kefx.tennis_matchmaking.commands.base.Command;
 import com.kefx.tennis_matchmaking.commands.base.Redirector;
