@@ -1,5 +1,6 @@
 package com.kefx.tennis_matchmaking.commands.fromButtons;
 
+import com.kefx.tennis_matchmaking.Bot;
 import com.kefx.tennis_matchmaking.commands.base.Command;
 import com.kefx.tennis_matchmaking.commands.base.Redirector;
 import com.kefx.tennis_matchmaking.services.forCommands.CreateGamesService;
@@ -29,7 +30,7 @@ public class AcceptGameResultButton implements Command {
 
     @Override
     public void execute(Update update) {
-        deleteMessageService.deleteMessage(update);
+
         String[] callBackData = update.getCallbackQuery().getData().split(" ");
         Long winnerId = Long.parseLong(callBackData[1]);
         String winnerName =callBackData[2];
@@ -39,8 +40,17 @@ public class AcceptGameResultButton implements Command {
         int[] accruedRatings = updatePlayerRatingsService.updateRatings(winnerId,loserId);
         createGameService.createGame(winnerId,winnerName,loserId,loserName,accruedRatings);
 
-        sendMessageService.sendMessage(winnerId.toString(),"Вы получили +" + accruedRatings[0] + " рейтинга!");
-        sendMessageService.sendMessage(loserId.toString(),"Вы потеряли -" + accruedRatings[1] + " рейтинга");
+        deleteMessageService.deleteMessage(winnerId);
+        deleteMessageService.deleteMessage(loserId);
+
+        sendMessageService.sendMessage(winnerId,"Вы получили +" + accruedRatings[0] + " рейтинга после победы над " + loserName + "!");
+        sendMessageService.sendMessage(loserId,"Вы потеряли -" + accruedRatings[1] + " рейтинга после поражения " + winnerName + " ");
+
+        deleteMessageService.banClearing(winnerId);
+        deleteMessageService.banClearing(loserId);
+
+        redirector.redirectAtCommand("/menu",winnerId);
+        redirector.redirectAtCommand("/menu",loserId);
 
 
     }

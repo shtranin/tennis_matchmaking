@@ -22,7 +22,7 @@ public class CommandContainer {
                             FinallyDeleteUser finallyDeleteUser, RenameButton renameButton, InfoCommand infoCommand,
                             CreateGameButton createGameButton, RivalButton rivalButton, PlayerButton playerButton,
                             WinnerButton winnerButton, CancelGameResultButton cancelGameResultButton,AcceptGameResultButton acceptGameResultButton,
-                            NothingCommand nothingCommand,MyStatisticButton myStatisticButton) {
+                            NothingCommand nothingCommand,MyStatisticButton myStatisticButton,RatingButton ratingButton) {
 
         this.unknownCommand = unknownCommand;
         container = ImmutableMap.<String, Command>builder()
@@ -44,6 +44,7 @@ public class CommandContainer {
                 .put(CommandType.accept.getName(),acceptGameResultButton)
                 .put(CommandType.nothing.getName(),nothingCommand)
                 .put(CommandType.statistic.getName(),myStatisticButton)
+                .put(CommandType.rating.getName(),ratingButton)
                 .build();
     }
 

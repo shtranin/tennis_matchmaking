@@ -40,7 +40,7 @@ public class RivalButton implements Command {
 
         Long userId = Bot.getPlayerIdFromUpdate(update);
         String chatId = Bot.getChatIdFromUpdate(update);
-        deleteMessageService.deleteMessage(update);
+        deleteMessageService.deleteMessage(userId);
         List<List<InlineKeyboardButton>> overList = new ArrayList<>();
         List<InlineKeyboardButton> listWithPlayers = new ArrayList<>();
         List<InlineKeyboardButton> listWithCancelButton = new ArrayList<>();

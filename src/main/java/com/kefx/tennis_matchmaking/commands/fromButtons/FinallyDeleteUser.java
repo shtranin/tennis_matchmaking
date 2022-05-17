@@ -1,5 +1,6 @@
 package com.kefx.tennis_matchmaking.commands.fromButtons;
 
+import com.kefx.tennis_matchmaking.Bot;
 import com.kefx.tennis_matchmaking.commands.base.Command;
 import com.kefx.tennis_matchmaking.commands.base.Redirector;
 import com.kefx.tennis_matchmaking.services.forCommands.DeleteUserService;
@@ -24,7 +25,7 @@ public class FinallyDeleteUser implements Command {
 
     @Override
     public void execute(Update update) {
-        deleteMessageService.deleteMessage(update);
+        deleteMessageService.deleteMessage(Bot.getPlayerIdFromUpdate(update));
         deleteUserService.deleteUser(update);
 
         redirector.redirectAtCommand("/menu",update);

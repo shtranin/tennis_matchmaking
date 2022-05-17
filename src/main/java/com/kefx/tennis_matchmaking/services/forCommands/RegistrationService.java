@@ -5,7 +5,6 @@ import com.kefx.tennis_matchmaking.Bot;
 import com.kefx.tennis_matchmaking.documents.UserStatementDocument;
 import com.kefx.tennis_matchmaking.documents.Process;
 import com.kefx.tennis_matchmaking.repo.UserStatementRepo;
-import com.kefx.tennis_matchmaking.repo.UserRepository;
 import com.kefx.tennis_matchmaking.services.other.DeleteMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -29,12 +28,12 @@ private final DeleteMessageService deleteMessageService;
     }
 
     public void registration(Update update) {
-        deleteMessageService.deleteMessage(update);
         Long userId = Bot.getPlayerIdFromUpdate(update);
+        deleteMessageService.deleteMessage(userId);
 
         UserStatementDocument statement = new UserStatementDocument(Process.registration.getName(), 1, userId);
         regRepository.save(statement);
-        sendMessageService.sendMessage(update,"Введите пожалуйста имя, под которым вы будете отображаться в таблице");
+        sendMessageService.sendMessage(userId,"Введите пожалуйста имя, под которым вы будете отображаться в таблице");
 
 
 

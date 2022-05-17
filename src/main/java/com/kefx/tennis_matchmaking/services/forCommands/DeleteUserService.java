@@ -23,8 +23,7 @@ public class DeleteUserService {
     public void deleteUser(Update update){
         Long userId = Bot.getPlayerIdFromUpdate(update);
         userRepository.deleteById(userId);
-        sendMessageService.sendMessage(update,"Вы были удалены");
-
+        sendMessageService.sendMessage(userId,"Вы были удалены");
 
     }
 }

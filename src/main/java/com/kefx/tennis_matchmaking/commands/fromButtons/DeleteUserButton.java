@@ -41,11 +41,12 @@ public class DeleteUserButton implements Command {
 
     @Override
     public void execute(Update update) {
-        if (!userDBService.isIdPresent(Bot.getPlayerIdFromUpdate(update))){
-            sendMessageService.sendMessage(update, "Вы еще не регистрировались");
+        Long userId = Bot.getPlayerIdFromUpdate(update);
+        if (!userDBService.isIdPresent(userId)){
+            sendMessageService.sendMessage(userId, "Вы еще не регистрировались");
             redirector.redirectAtCommand("/menu",update);
         }else{
-            deleteMessageService.deleteMessage(update);
+            deleteMessageService.deleteMessage(Bot.getPlayerIdFromUpdate(update));
             List<List<InlineKeyboardButton>> overList = new ArrayList<>();
 
             InlineKeyboardButton yesButton = new InlineKeyboardButton();
@@ -61,9 +62,8 @@ public class DeleteUserButton implements Command {
             overList.add(list);
 
             InlineKeyboardMarkup markup = new InlineKeyboardMarkup(overList);
-            Long userId = Bot.getPlayerIdFromUpdate(update);
-            String chatId = Bot.getChatIdFromUpdate(update);
 
+            String chatId = Bot.getChatIdFromUpdate(update);
             SendMessage sm = new SendMessage();
             sm.setChatId(chatId);
             sm.setText("Вы уверены, что хотите удалить свою запись из списка игроков? Весь рейтинг будет утерян, при повторной регистрации вы начнете заного");

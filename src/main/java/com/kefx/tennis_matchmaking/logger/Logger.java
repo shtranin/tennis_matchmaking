@@ -19,10 +19,12 @@ public class Logger {
         if(update.hasMessage()){
             message = update.getMessage().getText();
             name = update.getMessage().getFrom().getFirstName();
-        }else{
+        }else if(update.hasCallbackQuery()){
            name = update.getCallbackQuery().getFrom().getFirstName();
            message = update.getCallbackQuery().getData();
 
+        }else{
+            return;
         }
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");

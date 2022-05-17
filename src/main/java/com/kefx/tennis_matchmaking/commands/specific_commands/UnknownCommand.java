@@ -1,5 +1,6 @@
 package com.kefx.tennis_matchmaking.commands.specific_commands;
 
+import com.kefx.tennis_matchmaking.Bot;
 import com.kefx.tennis_matchmaking.commands.base.Command;
 import com.kefx.tennis_matchmaking.services.forCommands.SendMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,6 @@ public class UnknownCommand implements Command {
 
     @Override
     public void execute(Update update) {
-        service.sendMessage(update,command);
+        service.sendMessage(Bot.getPlayerIdFromUpdate(update),command);
     }
 }

@@ -21,10 +21,11 @@ public class UpdateLastReceivedMessageService {
         LastUserMessageDocument lastMessage = lastMessageRepository.findByOwnerId(userId);
         if (lastMessage == null) {
             lastMessage = new LastUserMessageDocument();
+            lastMessage.setOwnerId(userId);
+            lastMessage.setLastChatId(chatId);
         }
-        lastMessage.setOwnerId(userId);
-        lastMessage.setLastChatId(chatId);
-        lastMessage.setLastMessageId(messageId);
+
+        lastMessage.addLastMessageId(messageId);
 
         lastMessageRepository.save(lastMessage);
     }

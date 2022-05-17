@@ -31,7 +31,8 @@ public class SettingsButtonCommand implements Command {
 
     @Override
     public void execute(Update update) {
-        deleteMessageService.deleteMessage(update);
+        Long userId = Bot.getPlayerIdFromUpdate(update);
+        deleteMessageService.deleteMessage(userId);
 
         List<List<InlineKeyboardButton>> overList = new ArrayList<>();
 
@@ -56,7 +57,7 @@ public class SettingsButtonCommand implements Command {
         overList.add(list2);
         InlineKeyboardMarkup markup = new InlineKeyboardMarkup(overList);
 
-        Long userId = Bot.getPlayerIdFromUpdate(update);
+
         String chatId = Bot.getChatIdFromUpdate(update);
         SendMessage sm = new SendMessage();
         sm.setText("Настройки");

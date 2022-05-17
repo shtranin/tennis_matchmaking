@@ -3,7 +3,6 @@ package com.kefx.tennis_matchmaking.commands.specific_commands;
 import com.kefx.tennis_matchmaking.Bot;
 import com.kefx.tennis_matchmaking.commands.base.Command;
 import com.kefx.tennis_matchmaking.documents.UserStatementDocument;
-import com.kefx.tennis_matchmaking.entity.UserEntity;
 import com.kefx.tennis_matchmaking.repo.UserStatementRepo;
 import com.kefx.tennis_matchmaking.services.other.DeleteMessageService;
 import com.kefx.tennis_matchmaking.services.withDB.UserDBService;
@@ -39,10 +38,13 @@ public class MenuCommand implements Command {
 
     @Override
     public void execute(Update update) {
-        Long userId = Bot.getPlayerIdFromUpdate(update);
-        String chatId = Bot.getChatIdFromUpdate(update);
-        if(deleteMessageService.isExistWithOwnerId(userId)){
-            deleteMessageService.deleteMessage(update);
+        realExecute(Bot.getPlayerIdFromUpdate(update));
+    }
+
+    public void realExecute(Long userId){
+        String chatId = userId.toString();
+        if(deleteMessageService.isExistWithOwnerId(userId) && !deleteMessageService.isClearingBanned(userId)){
+            deleteMessageService.deleteMessage(userId);
         }
 
         UserStatementDocument userStatementDocument = userStatementRepo.findByOwnerId(userId);
@@ -84,7 +86,7 @@ public class MenuCommand implements Command {
         }
         InlineKeyboardButton button3 = new InlineKeyboardButton();
         button3.setText(currentUserRating+"");
-        button3.setCallbackData("nothing");
+        button3.setCallbackData("/rating");
 
         InlineKeyboardButton button4 = new InlineKeyboardButton();
         button4.setText("Настройки");

@@ -1,5 +1,6 @@
 package com.kefx.tennis_matchmaking.commands.fromButtons;
 
+import com.kefx.tennis_matchmaking.Bot;
 import com.kefx.tennis_matchmaking.commands.base.Command;
 import com.kefx.tennis_matchmaking.commands.base.Redirector;
 import com.kefx.tennis_matchmaking.services.forCommands.SendMessageService;
@@ -13,6 +14,7 @@ public class InfoCommand implements Command {
     private final DeleteMessageService deleteMessageService;
     private final SendMessageService sendMessageService;
     private final Redirector redirector;
+    private final String info = "tut infa how it works";
 
     @Autowired
     public InfoCommand(DeleteMessageService deleteMessageService, SendMessageService sendMessageService, Redirector redirector) {
@@ -23,8 +25,10 @@ public class InfoCommand implements Command {
 
     @Override
     public void execute(Update update) {
-        deleteMessageService.deleteMessage(update);
-        sendMessageService.sendMessage(update,"tut infa how it works");
+        Long userId = Bot.getPlayerIdFromUpdate(update);
+        deleteMessageService.deleteMessage(userId);
+        sendMessageService.sendMessage(userId,info);
+        deleteMessageService.banClearing(userId);
 
 
         redirector.redirectAtCommand("/menu",update);

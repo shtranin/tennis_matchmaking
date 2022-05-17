@@ -19,7 +19,8 @@ public enum CommandType {
     cancel("cancel"),
     accept("accept"),
     nothing("nothing"),
-    statistic("/statistic");
+    statistic("/statistic"),
+    rating("/rating");
 
 
 

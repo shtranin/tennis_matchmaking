@@ -41,14 +41,15 @@ public class PlayerButton implements Command {
 
     @Override
     public void execute(Update update) {
+        Long userId = Bot.getPlayerIdFromUpdate(update);
         Long playerId = Long.parseLong(update.getCallbackQuery().getData().split(" ")[1]);
         String playerName = update.getCallbackQuery().getData().split(" ")[2];
         List<GameEntity> list = gameDBService.getAllGamesById(playerId);
         if(list.isEmpty()){
-            sendMessageService.sendMessage(update,"Игрок еще не имел рейтинговых игр");
+            sendMessageService.sendMessage(userId,"Игрок еще не имел рейтинговых игр");
         }else {
 
-            deleteMessageService.deleteMessage(update);
+            deleteMessageService.deleteMessage(Bot.getPlayerIdFromUpdate(update));
             List<List<InlineKeyboardButton>> overList = new ArrayList<>();
 
             for (GameEntity game : list) {
@@ -75,7 +76,7 @@ public class PlayerButton implements Command {
 
             try {
                 Message becameMessage = bot.execute(sm);
-                updateLastReceivedMessageService.update(playerId,Bot.getChatIdFromUpdate(update), becameMessage.getMessageId());
+                updateLastReceivedMessageService.update(userId,Bot.getChatIdFromUpdate(update), becameMessage.getMessageId());
             } catch (TelegramApiException e) {
                 e.printStackTrace();
             }

@@ -53,7 +53,7 @@ public class ShowTableService {
 
         List<UserEntity> allUsers = userDBService.getSortedByRatingUsers();
         if(allUsers.isEmpty()){
-            sendMessageService.sendMessage(update,"Таблица пока пуста");
+            sendMessageService.sendMessage(userId,"Таблица пока пуста");
             redirector.redirectAtCommand("/menu",update);
         }else{
             List<List<InlineKeyboardButton>> overList = new ArrayList<>();

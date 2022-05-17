@@ -33,7 +33,8 @@ public class WinnerButton implements Command {
 
     @Override
     public void execute(Update update) {
-        deleteMessageService.deleteMessage(update);
+        Long userId = Bot.getPlayerIdFromUpdate(update);
+
         String[] callBackData = update.getCallbackQuery().getData().split(" ");
         Long winnerId = Long.parseLong(callBackData[1]);
         String winnerName = callBackData[2];
@@ -60,10 +61,14 @@ public class WinnerButton implements Command {
         sm.setChatId(loserId.toString());
         sm.setReplyMarkup(markup);
 
+        deleteMessageService.deleteMessage(loserId);
         try {
             Message becameMessage =bot.execute(sm);
             updateLastReceivedMessageService.update(loserId,loserId.toString(), becameMessage.getMessageId());
-            sendMessageService.sendMessage(update,"Ваша игра будет зарегистрирована и рейтинг будет расчитан после того, как  " + loserName + "  подтвердит поражение");
+            if(userId.equals(winnerId)) {
+                deleteMessageService.deleteMessage(winnerId);
+                sendMessageService.sendMessage(userId, "Ваша игра будет зарегистрирована и рейтинг будет расчитан после того, как  " + loserName + "  подтвердит поражение");
+            }
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }

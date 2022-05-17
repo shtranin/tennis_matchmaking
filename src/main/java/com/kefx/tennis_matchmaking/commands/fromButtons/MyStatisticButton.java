@@ -42,10 +42,10 @@ public class MyStatisticButton implements Command {
 
         List<GameEntity> list = gameDBService.getAllGamesById(playerId);
         if(list.isEmpty()){
-            sendMessageService.sendMessage(update,"Вы еще не имели рейтинговых игр");
+            sendMessageService.sendMessage(playerId,"Вы еще не имели рейтинговых игр");
         }else {
 
-            deleteMessageService.deleteMessage(update);
+            deleteMessageService.deleteMessage(playerId);
             List<List<InlineKeyboardButton>> overList = new ArrayList<>();
 
             for (GameEntity game : list) {

@@ -29,8 +29,14 @@ public class CancelGameResultButton implements Command {
         String loserName = callBackData[4];
         deleteMessageService.deleteMessage(winnerId);
         deleteMessageService.deleteMessage(loserId);
-        sendMessageService.sendMessage(loserId.toString(),"Вы не подтвердили поражение " + winnerName);
-        sendMessageService.sendMessage(winnerId.toString(),loserName + " не подтвердил поражение Вам");
-        redirector.redirectAtCommand("/menu",update);
+
+        sendMessageService.sendMessage(loserId,"Вы не подтвердили поражение " + winnerName);
+        sendMessageService.sendMessage(winnerId,loserName + " не подтвердил поражение Вам");
+
+        deleteMessageService.banClearing(winnerId);
+        deleteMessageService.banClearing(loserId);
+
+        redirector.redirectAtCommand("/menu",winnerId);
+        redirector.redirectAtCommand("/menu",loserId);
     }
 }

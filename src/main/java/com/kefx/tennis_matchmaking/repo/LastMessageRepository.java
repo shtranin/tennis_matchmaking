@@ -6,4 +6,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 public interface LastMessageRepository extends MongoRepository<LastUserMessageDocument, Long> {
     LastUserMessageDocument findByOwnerId(Long ownerId);
     boolean existsByOwnerId(Long ownerId);
+
+
 }

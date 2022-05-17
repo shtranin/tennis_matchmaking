@@ -1,13 +1,21 @@
 package com.kefx.tennis_matchmaking.commands.specific_commands;
 
+import com.kefx.tennis_matchmaking.Bot;
 import com.kefx.tennis_matchmaking.commands.base.Command;
 import com.kefx.tennis_matchmaking.commands.base.Redirector;
 import com.kefx.tennis_matchmaking.services.forCommands.SendMessageService;
+import com.kefx.tennis_matchmaking.services.other.DeleteMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
+import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+
 @Component
 public class StartCommand implements Command {
+    private final Bot bot;
+    private final DeleteMessageService deleteMessageService;
     private final SendMessageService service;
     private final Redirector redirector;
     private final String command =
@@ -25,7 +33,9 @@ public class StartCommand implements Command {
         ;
 
     @Autowired
-    public StartCommand(SendMessageService service, Redirector redirector) {
+    public StartCommand(@Lazy Bot bot, DeleteMessageService deleteMessageService, SendMessageService service, Redirector redirector) {
+        this.bot = bot;
+        this.deleteMessageService = deleteMessageService;
         this.service = service;
         this.redirector = redirector;
     }
@@ -33,7 +43,16 @@ public class StartCommand implements Command {
 
     @Override
     public void execute(Update update) {
-        service.sendMessage(update,command);
+        SendMessage sm = new SendMessage();
+        sm.setChatId(Bot.getChatIdFromUpdate(update));
+        sm.setText(command);
+
+        try {
+            bot.execute(sm);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
+
         redirector.redirectAtCommand("/menu",update);
     }
 }

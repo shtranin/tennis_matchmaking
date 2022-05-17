@@ -1,5 +1,6 @@
 package com.kefx.tennis_matchmaking.commands.fromButtons;
 
+import com.kefx.tennis_matchmaking.Bot;
 import com.kefx.tennis_matchmaking.commands.base.Command;
 import com.kefx.tennis_matchmaking.services.forCommands.ShowTableService;
 import com.kefx.tennis_matchmaking.services.other.DeleteMessageService;
@@ -20,7 +21,7 @@ public class ShowTableCommand implements Command {
 
     @Override
     public void execute(Update update) {
-        deleteMessageService.deleteMessage(update);
+        deleteMessageService.deleteMessage(Bot.getPlayerIdFromUpdate(update));
         showTableService.showTable(update);
 
     }
