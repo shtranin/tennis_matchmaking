@@ -40,7 +40,9 @@ public class GameEntity {
 
     @Override
     public String toString() {
-        String result = isWin ? "] ПОБЕДА рейтинг + " : "] ПОРАЖЕНИЕ рейтинг - ";
-        return "Противник [" + rivalName + result + accruedRating;
+//        String result = isWin ? "] ПОБЕДА рейтинг + " : "] ПОРАЖЕНИЕ рейтинг - ";
+//        return "Противник [" + rivalName + result + accruedRating;
+          String result = isWin ? "]    ПОБЕДА    + " : "]    ПОРАЖЕНИЕ    - ";
+          return " [" + rivalName + result + accruedRating;
     }
 }

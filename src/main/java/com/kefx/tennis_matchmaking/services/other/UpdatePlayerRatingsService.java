@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class UpdatePlayerRatingsService {
     private final UserDBService userDBService;
+    private final int MAX_GETTING_RATING = 80;
+    private final int MIN_GETTING_RATING = 7;
 
     public UpdatePlayerRatingsService(UserDBService userDBService) {
         this.userDBService = userDBService;
@@ -20,17 +22,16 @@ public class UpdatePlayerRatingsService {
         int ratingDelta = winner.getRating() - loser.getRating();
         int accruedRating;
         if(ratingDelta <= 0){
-            accruedRating =Math.min((int)(Math.abs(ratingDelta) * 0.12) + 30,80);
+            accruedRating =Math.min((int)(Math.abs(ratingDelta) * 0.12) + 30,MAX_GETTING_RATING);
         }else{
-            accruedRating =Math.max(30 - ((int)(Math.abs(ratingDelta) * 0.08)),7);
+            accruedRating =Math.max(30 - ((int)(Math.abs(ratingDelta) * 0.08)),MIN_GETTING_RATING);
         }
 
 
 
         int[] ratings = {accruedRating,accruedRating};
-        int loserPlus = loser.getRating() - 1500;
-        if(loserPlus < accruedRating){
-            ratings[1] = loserPlus;
+        if(loser.getRating() < accruedRating){
+            ratings[1] = loser.getRating();
         }
 
         winner.setRating(winner.getRating() + ratings[0]);

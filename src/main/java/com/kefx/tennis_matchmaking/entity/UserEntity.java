@@ -56,7 +56,7 @@ public class UserEntity {
         UserEntity userEntity = new UserEntity();
         userEntity.setId(id);
         userEntity.setName(name);
-        userEntity.setRating(1500);
+        userEntity.setRating(0);
         return userEntity;
     }
 

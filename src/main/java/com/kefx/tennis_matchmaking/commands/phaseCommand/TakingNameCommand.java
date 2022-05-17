@@ -31,6 +31,11 @@ public class TakingNameCommand implements Command {
     @Override
     public void execute(Update update) {
         String proposedName = update.getMessage().getText().trim();
+        Long userId = Bot.getPlayerIdFromUpdate(update);
+        if(proposedName.length() > 13){
+            sendMessageService.sendMessage(userId,"Имя не может быть длиннее 13 символов. Введите пожалуйста имя короче");
+            return;
+        }
 
         UserEntity userEntity = UserEntity.getNewEntityFromUpdate(update);
         userEntity.setName(proposedName);

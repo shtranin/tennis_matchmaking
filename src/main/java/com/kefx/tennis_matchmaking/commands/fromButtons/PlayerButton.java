@@ -70,7 +70,8 @@ public class PlayerButton implements Command {
 
             InlineKeyboardMarkup markup = new InlineKeyboardMarkup(overList);
             SendMessage sm = new SendMessage();
-            sm.setText("Статистика игр " + playerName);
+            //sm.setText("Статистика игр " + playerName);
+            sm.setText("Статистика игр " + playerName + "\n[Противник]    РЕЗУЛЬТАТ    рейтинг");
             sm.setChatId(Bot.getChatIdFromUpdate(update));
             sm.setReplyMarkup(markup);
 

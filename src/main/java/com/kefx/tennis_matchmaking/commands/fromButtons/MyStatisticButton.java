@@ -49,11 +49,11 @@ public class MyStatisticButton implements Command {
             List<List<InlineKeyboardButton>> overList = new ArrayList<>();
 
             for (GameEntity game : list) {
-                InlineKeyboardButton playerButton = new InlineKeyboardButton();
-                playerButton.setText(game.toString());
-                playerButton.setCallbackData("nothing");
+                InlineKeyboardButton gameButton = new InlineKeyboardButton();
+                gameButton.setText(game.toString());
+                gameButton.setCallbackData("nothing");
                 List<InlineKeyboardButton> innerList = new ArrayList<>();
-                innerList.add(playerButton);
+                innerList.add(gameButton);
                 overList.add(innerList);
             }
 
@@ -66,7 +66,8 @@ public class MyStatisticButton implements Command {
 
             InlineKeyboardMarkup markup = new InlineKeyboardMarkup(overList);
             SendMessage sm = new SendMessage();
-            sm.setText("Ваша статистика игр");
+           // sm.setText("Ваша статистика игр");
+            sm.setText("Статистика Ваших игр\n[Противник]    РЕЗУЛЬТАТ    рейтинг");
             sm.setChatId(Bot.getChatIdFromUpdate(update));
             sm.setReplyMarkup(markup);
 
