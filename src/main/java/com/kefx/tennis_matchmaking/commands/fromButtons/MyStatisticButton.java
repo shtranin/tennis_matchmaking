@@ -3,10 +3,12 @@ package com.kefx.tennis_matchmaking.commands.fromButtons;
 import com.kefx.tennis_matchmaking.Bot;
 import com.kefx.tennis_matchmaking.commands.base.Command;
 import com.kefx.tennis_matchmaking.entity.GameEntity;
+import com.kefx.tennis_matchmaking.entity.UserEntity;
 import com.kefx.tennis_matchmaking.services.forCommands.SendMessageService;
 import com.kefx.tennis_matchmaking.services.other.DeleteMessageService;
 import com.kefx.tennis_matchmaking.services.withDB.GameDBService;
 import com.kefx.tennis_matchmaking.services.withDB.UpdateLastReceivedMessageService;
+import com.kefx.tennis_matchmaking.services.withDB.UserDBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
@@ -23,13 +25,15 @@ import java.util.List;
 @Component
 public class MyStatisticButton implements Command {
     private final Bot bot;
+    private final UserDBService userDBService;
     private final GameDBService gameDBService;
     private final SendMessageService sendMessageService;
     private final DeleteMessageService deleteMessageService;
     private final UpdateLastReceivedMessageService updateLastReceivedMessageService;
     @Autowired
-    public MyStatisticButton(@Lazy Bot bot, GameDBService gameDBService, SendMessageService sendMessageService, DeleteMessageService deleteMessageService, UpdateLastReceivedMessageService updateLastReceivedMessageService) {
+    public MyStatisticButton(@Lazy Bot bot, UserDBService userDBService, GameDBService gameDBService, SendMessageService sendMessageService, DeleteMessageService deleteMessageService, UpdateLastReceivedMessageService updateLastReceivedMessageService) {
         this.bot = bot;
+        this.userDBService = userDBService;
         this.gameDBService = gameDBService;
         this.sendMessageService = sendMessageService;
         this.deleteMessageService = deleteMessageService;
@@ -38,20 +42,20 @@ public class MyStatisticButton implements Command {
 
     @Override
     public void execute(Update update) {
-        Long playerId = Bot.getPlayerIdFromUpdate(update);
-
-        List<GameEntity> list = gameDBService.getAllGamesById(playerId);
+        UserEntity currentUser = getUserEntityFromUpdate(update);
+        Long userId = currentUser.getId();
+        List<GameEntity> list = gameDBService.getAllGamesById(currentUser);
         if(list.isEmpty()){
-            sendMessageService.sendMessage(playerId,"Вы еще не имели рейтинговых игр");
+            sendMessageService.sendMessage(userId,"Вы еще не имели рейтинговых игр");
         }else {
 
-            deleteMessageService.deleteMessage(playerId);
+            deleteMessageService.deleteMessage(userId);
             List<List<InlineKeyboardButton>> overList = new ArrayList<>();
 
             for (GameEntity game : list) {
                 InlineKeyboardButton gameButton = new InlineKeyboardButton();
-                gameButton.setText(game.toString());
-                gameButton.setCallbackData("nothing");
+                gameButton.setText(game.textResultForUser(userId));
+                gameButton.setCallbackData("/gameDetails " + game.getId());
                 List<InlineKeyboardButton> innerList = new ArrayList<>();
                 innerList.add(gameButton);
                 overList.add(innerList);
@@ -73,11 +77,15 @@ public class MyStatisticButton implements Command {
 
             try {
                 Message becameMessage = bot.execute(sm);
-                updateLastReceivedMessageService.update(playerId,Bot.getChatIdFromUpdate(update), becameMessage.getMessageId());
+                updateLastReceivedMessageService.update(userId,Bot.getChatIdFromUpdate(update), becameMessage.getMessageId());
             } catch (TelegramApiException e) {
                 e.printStackTrace();
             }
 
         }
+    }
+
+    private UserEntity getUserEntityFromUpdate(Update update){
+        return userDBService.getById(Bot.getPlayerIdFromUpdate(update));
     }
 }

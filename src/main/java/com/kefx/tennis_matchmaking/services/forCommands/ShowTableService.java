@@ -66,7 +66,7 @@ public class ShowTableService {
                 InlineKeyboardButton button = new InlineKeyboardButton();
 
                 button.setText(entity.toString());
-                button.setCallbackData(callBackDataAtPlayerButton + entity.getId() + " " + entity.getName());
+                button.setCallbackData(callBackDataAtPlayerButton + entity.getId());
 
                 innerList.add(button);
                 overList.add(innerList);

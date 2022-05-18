@@ -20,7 +20,8 @@ public enum CommandType {
     accept("accept"),
     nothing("nothing"),
     statistic("/statistic"),
-    rating("/rating");
+    rating("/rating"),
+    gameDetails("/gameDetails");
 
 
 

@@ -8,22 +8,24 @@ import com.kefx.tennis_matchmaking.repo.UserRepository;
 import com.kefx.tennis_matchmaking.repo.UserStatementRepo;
 import com.kefx.tennis_matchmaking.services.forCommands.SendMessageService;
 import com.kefx.tennis_matchmaking.services.other.DeleteMessageService;
+import com.kefx.tennis_matchmaking.services.withDB.UserDBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import org.telegram.telegrambots.meta.api.objects.Update;
 @Component
-
+@Transactional
 public class TakingNameCommand implements Command {
     private final SendMessageService sendMessageService;
+    private final UserDBService userDBService;
     private final DeleteMessageService deleteMessageService;
-    private final UserRepository userRepository;
     private final UserStatementRepo userStatementRepo;
     private final Redirector redirector;
     @Autowired
-    public TakingNameCommand(SendMessageService sendMessageService, DeleteMessageService deleteMessageService, UserRepository userRepository, UserStatementRepo userStatementRepo, Redirector redirector) {
+    public TakingNameCommand(SendMessageService sendMessageService, UserDBService userDBService, DeleteMessageService deleteMessageService, UserRepository userRepository, UserStatementRepo userStatementRepo, Redirector redirector) {
         this.sendMessageService = sendMessageService;
+        this.userDBService = userDBService;
         this.deleteMessageService = deleteMessageService;
-        this.userRepository = userRepository;
         this.userStatementRepo = userStatementRepo;
         this.redirector = redirector;
     }
@@ -37,10 +39,10 @@ public class TakingNameCommand implements Command {
             return;
         }
 
-        UserEntity userEntity = UserEntity.getNewEntityFromUpdate(update);
+        UserEntity userEntity = userDBService.getById(userId);
         userEntity.setName(proposedName);
 
-        userRepository.save(userEntity);
+        userDBService.saveUserEntity(userEntity);
         userStatementRepo.deleteByOwnerId(userEntity.getId());
 
         sendMessageService.sendMessage(Bot.getPlayerIdFromUpdate(update),"Ваше имя записано");

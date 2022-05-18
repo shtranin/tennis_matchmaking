@@ -40,17 +40,17 @@ public class WinnerButton implements Command {
         String winnerName = callBackData[2];
         Long loserId = Long.parseLong(callBackData[3]);
         String loserName = callBackData[4];
-        String infoAboutPlayers = winnerId + " " + winnerName + " "+ loserId + " " + loserName;
+        String playersIds = winnerId + " " + loserId;
 
         List<List<InlineKeyboardButton>> overList = new ArrayList<>();
         List<InlineKeyboardButton> list = new ArrayList<>();
 
         InlineKeyboardButton acceptButton = new InlineKeyboardButton();
         acceptButton.setText("Подтверждаю");
-        acceptButton.setCallbackData("accept " + infoAboutPlayers);
+        acceptButton.setCallbackData("accept " + playersIds);
         InlineKeyboardButton cancelButton = new InlineKeyboardButton();
         cancelButton.setText("Отменить");
-        cancelButton.setCallbackData("cancel " + infoAboutPlayers);
+        cancelButton.setCallbackData("cancel " + playersIds);
         list.add(acceptButton);
         list.add(cancelButton);
         overList.add(list);
