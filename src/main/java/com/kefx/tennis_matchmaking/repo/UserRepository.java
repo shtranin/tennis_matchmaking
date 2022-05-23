@@ -10,5 +10,5 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
     List<UserEntity> findByOrderByRatingDesc();
-
+    UserEntity getById(Long id);
 }

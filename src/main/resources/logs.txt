@@ -1281,3 +1281,145 @@ Daniil /showTable 2022/05/19 02:18:32 \
 Daniil player 325533383 2022/05/19 02:18:33 \
 Daniil /showTable 2022/05/19 02:18:36 \
 Daniil /menu 2022/05/19 02:18:37 \
+Daniil /statistic 2022/05/19 22:19:51 \
+Daniil /menu 2022/05/19 22:19:57 \
+Daniil /showTable 2022/05/19 22:20:00 \
+Daniil /menu 2022/05/19 22:20:08 \
+Daniil /settings 2022/05/19 22:20:13 \
+Daniil /menu 2022/05/19 22:20:15 \
+Daniil /showTable 2022/05/19 22:20:17 \
+Daniil player 843236890 2022/05/19 22:20:19 \
+Daniil /showTable 2022/05/19 22:20:20 \
+Daniil /menu 2022/05/19 22:20:24 \
+Daniil /settings 2022/05/19 22:20:26 \
+Daniil /deleteUser 2022/05/19 22:20:27 \
+Daniil /finallyDelete 2022/05/19 22:20:29 \
+Daniil /showTable 2022/05/19 22:20:34 \
+Daniil player 843236890 2022/05/19 22:20:37 \
+Daniil /showTable 2022/05/19 22:20:38 \
+Daniil /menu 2022/05/19 22:20:39 \
+Daniil /statistic 2022/05/19 22:20:40 \
+Daniil /menu 2022/05/19 22:20:42 \
+Daniil /registration 2022/05/19 22:21:35 \
+Daniil kokp 2022/05/19 22:21:44 \
+Daniil /showTable 2022/05/19 22:21:53 \
+Daniil /menu 2022/05/19 22:21:55 \
+Daniil /settings 2022/05/19 22:59:42 \
+Daniil /deleteUser 2022/05/19 22:59:44 \
+Daniil /finallyDelete 2022/05/19 22:59:46 \
+Daniil /registration 2022/05/19 23:00:02 \
+Daniil kokp 2022/05/19 23:00:07 \
+Daniil /statistic 2022/05/19 23:00:12 \
+Daniil /menu 2022/05/19 23:00:14 \
+Daniil /showTable 2022/05/19 23:00:16 \
+Daniil /menu 2022/05/19 23:00:18 \
+Daniil /createGame 2022/05/19 23:00:19 \
+Daniil /menu 2022/05/19 23:00:23 \
+Daniil /showTable 2022/05/19 23:00:24 \
+Daniil player 325533383 2022/05/19 23:00:25 \
+Daniil /showTable 2022/05/19 23:00:26 \
+Daniil player 843236890 2022/05/19 23:00:27 \
+Daniil /showTable 2022/05/19 23:00:29 \
+Daniil /menu 2022/05/19 23:00:30 \
+Daniil /showTable 2022/05/19 23:01:14 \
+Daniil player 325533383 2022/05/19 23:01:17 \
+Daniil /showTable 2022/05/19 23:01:18 \
+Daniil /menu 2022/05/19 23:01:20 \
+Daniil /createGame 2022/05/19 23:01:21 \
+Daniil /menu 2022/05/19 23:01:24 \
+Daniil /statistic 2022/05/19 23:23:54 \
+Daniil /menu 2022/05/19 23:23:59 \
+Daniil /showTable 2022/05/19 23:24:03 \
+Daniil player 325533383 2022/05/19 23:24:05 \
+Daniil /showTable 2022/05/19 23:24:06 \
+Daniil /menu 2022/05/19 23:24:07 \
+Daniil /settings 2022/05/19 23:24:08 \
+Daniil /rename 2022/05/19 23:24:11 \
+Daniil 123 2022/05/19 23:24:13 \
+Daniil /statistic 2022/05/19 23:24:16 \
+Daniil /menu 2022/05/19 23:24:17 \
+Daniil /showTable 2022/05/19 23:24:19 \
+Daniil player 843236890 2022/05/19 23:24:21 \
+Daniil /showTable 2022/05/19 23:24:23 \
+Daniil /menu 2022/05/19 23:24:25 \
+Daniil /statistic 2022/05/19 23:24:40 \
+Daniil /menu 2022/05/19 23:24:42 \
+Daniil /settings 2022/05/19 23:24:44 \
+Daniil /rename 2022/05/19 23:24:48 \
+Daniil 321 2022/05/19 23:24:50 \
+Daniil /settings 2022/05/19 23:24:53 \
+Daniil /menu 2022/05/19 23:24:55 \
+Daniil /settings 2022/05/19 23:24:57 \
+Daniil /deleteUser 2022/05/19 23:24:58 \
+Daniil /finallyDelete 2022/05/19 23:25:41 \
+Daniil /showTable 2022/05/19 23:25:46 \
+Daniil /menu 2022/05/19 23:25:48 \
+Daniil /statistic 2022/05/19 23:25:50 \
+Daniil /menu 2022/05/19 23:25:51 \
+Daniil /createGame 2022/05/19 23:25:53 \
+Daniil rival 7 2022/05/19 23:26:00 \
+Daniil /menu 2022/05/19 23:26:05 \
+Daniil /createGame 2022/05/19 23:26:22 \
+Daniil /menu 2022/05/19 23:26:27 \
+Daniil /settings 2022/05/19 23:26:48 \
+Daniil /rename 2022/05/19 23:26:51 \
+Daniil /menu 2022/05/19 23:27:25 \
+Daniil /settings 2022/05/19 23:27:30 \
+Daniil /deleteUser 2022/05/19 23:27:31 \
+Daniil /menu 2022/05/19 23:27:34 \
+Daniil /settings 2022/05/19 23:27:49 \
+Daniil /menu 2022/05/19 23:27:56 \
+Daniil /settings 2022/05/19 23:27:57 \
+Daniil /rename 2022/05/19 23:27:59 \
+Daniil /deleteUser 2022/05/19 23:28:04 \
+Daniil /menu 2022/05/19 23:28:09 \
+Daniil /registration 2022/05/19 23:28:14 \
+Daniil kekch 2022/05/19 23:28:18 \
+Daniil /showTable 2022/05/19 23:28:21 \
+Daniil /menu 2022/05/19 23:28:23 \
+Daniil /createGame 2022/05/19 23:32:06 \
+Daniil /menu 2022/05/19 23:32:09 \
+Daniil /settings 2022/05/19 23:32:10 \
+Daniil /deleteUser 2022/05/19 23:32:12 \
+Daniil /finallyDelete 2022/05/19 23:32:17 \
+Daniil /createGame 2022/05/19 23:32:19 \
+Daniil /registration 2022/05/19 23:32:44 \
+Daniil kefx 2022/05/19 23:32:47 \
+Daniil /statistic 2022/05/19 23:32:54 \
+Daniil /menu 2022/05/19 23:32:58 \
+Daniil /showTable 2022/05/19 23:32:59 \
+Daniil /menu 2022/05/19 23:33:01 \
+Daniil /settings 2022/05/19 23:33:03 \
+Daniil /menu 2022/05/19 23:33:12 \
+Daniil /rating 2022/05/19 23:36:18 \
+Daniil /info 2022/05/19 23:36:21 \
+Daniil /createGame 2022/05/19 23:36:30 \
+Daniil /menu 2022/05/19 23:36:35 \
+Daniil /info 2022/05/19 23:36:39 \
+Daniil /showTable 2022/05/19 23:36:47 \
+Daniil /start 2022/05/20 00:32:28 \
+Daniil /settings 2022/05/20 00:32:35 \
+Daniil /menu 2022/05/20 00:32:37 \
+Daniil /showTable 2022/05/20 00:32:38 \
+Daniil player 3 2022/05/20 00:32:41 \
+Daniil player 21381613 2022/05/20 00:32:43 \
+Daniil player 843236890 2022/05/20 00:32:45 \
+Daniil /showTable 2022/05/20 00:32:50 \
+Daniil player 21381613 2022/05/20 00:32:52 \
+Daniil player 843236890 2022/05/20 00:32:53 \
+Daniil /gameDetails 79 2022/05/20 00:32:55 \
+Daniil /gameDetails 81 2022/05/20 00:33:00 \
+Daniil /gameDetails 82 2022/05/20 00:33:05 \
+Daniil /showTable 2022/05/20 00:33:15 \
+Daniil /menu 2022/05/20 00:33:17 \
+Daniil /statistic 2022/05/20 00:33:18 \
+Daniil /gameDetails 82 2022/05/20 00:33:20 \
+Daniil /gameDetails 81 2022/05/20 00:33:21 \
+Daniil /gameDetails 79 2022/05/20 00:33:23 \
+Daniil /menu 2022/05/20 00:33:26 \
+Daniil /showTable 2022/05/21 00:50:55 \
+Daniil player 325533383 2022/05/21 00:50:58 \
+Daniil /showTable 2022/05/21 00:51:02 \
+Daniil /menu 2022/05/21 00:51:07 \
+Daniil /statistic 2022/05/21 00:51:09 \
+Daniil /menu 2022/05/21 00:51:18 \

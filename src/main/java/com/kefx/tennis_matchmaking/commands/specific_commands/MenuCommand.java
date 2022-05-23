@@ -3,6 +3,7 @@ package com.kefx.tennis_matchmaking.commands.specific_commands;
 import com.kefx.tennis_matchmaking.Bot;
 import com.kefx.tennis_matchmaking.commands.base.Command;
 import com.kefx.tennis_matchmaking.documents.UserStatementDocument;
+import com.kefx.tennis_matchmaking.entity.UserEntity;
 import com.kefx.tennis_matchmaking.repo.UserStatementRepo;
 import com.kefx.tennis_matchmaking.services.other.DeleteMessageService;
 import com.kefx.tennis_matchmaking.services.withDB.UserDBService;
@@ -52,8 +53,9 @@ public class MenuCommand implements Command {
             userStatementRepo.delete(userStatementDocument);
         }
 
+        UserEntity currentEntity = userDBService.getById(userId);
         List<List<InlineKeyboardButton>> overlist = new ArrayList<>();
-        if(!userDBService.isIdPresent(userId)){
+        if(currentEntity == null || currentEntity.isDeleted()){
             InlineKeyboardButton registrationButton = new InlineKeyboardButton();
             registrationButton.setText("Регистрация");
             registrationButton.setCallbackData("/registration");
@@ -81,7 +83,7 @@ public class MenuCommand implements Command {
         list1.add(button2);
 
         int currentUserRating = 0;
-        if(userDBService.isIdPresent(userId)){
+        if(currentEntity != null){
             currentUserRating = userDBService.getById(userId).getRating();
         }
         InlineKeyboardButton button3 = new InlineKeyboardButton();

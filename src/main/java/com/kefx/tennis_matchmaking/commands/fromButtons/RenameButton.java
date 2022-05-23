@@ -27,12 +27,11 @@ public class RenameButton implements Command {
     @Override
     public void execute(Update update) {
         Long userId = Bot.getPlayerIdFromUpdate(update);
-        deleteMessageService.deleteMessage(userId);
-        if (!userDBService.isIdPresent(userId)) {
+
+        if (!userDBService.isIdPresentAndNotDeleted(userId) ) {
             sendMessageService.sendMessage(userId, "Вы еще не были зарегистрированы");
-           // deleteMessageService.banClearing(userId);
-           // redirector.redirectAtCommand("/menu", update);
         } else {
+            deleteMessageService.deleteMessage(userId);
             redirector.redirectAtCommand("/registration",update);
         }
     }

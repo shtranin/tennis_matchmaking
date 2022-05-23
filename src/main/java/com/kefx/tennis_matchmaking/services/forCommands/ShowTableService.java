@@ -54,11 +54,10 @@ public class ShowTableService {
         List<UserEntity> allUsers = userDBService.getSortedByRatingUsers();
         if(allUsers.isEmpty()){
             sendMessageService.sendMessage(userId,"Таблица пока пуста");
-            redirector.redirectAtCommand("/menu",update);
         }else{
             List<List<InlineKeyboardButton>> overList = new ArrayList<>();
             for(UserEntity entity : allUsers){
-                if(entity.getId().equals(userId) && textOntable.equals("Выберите соперника")){
+                if(entity.getId().equals(userId)  && textOntable.equals("Выберите соперника") || entity.isDeleted()){
                     continue;
                 }
 

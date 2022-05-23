@@ -4,10 +4,12 @@ import com.kefx.tennis_matchmaking.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.kefx.tennis_matchmaking.repo.UserRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class UserDBService {
 
     private final UserRepository repo;
@@ -28,9 +30,10 @@ public class UserDBService {
         repo.delete(repo.getById(id));
     }
 
-    public boolean isIdPresent(Long id){
+    public boolean isIdPresentAndNotDeleted(Long id){
+            UserEntity userEntity = repo.getById(id);
+        return userEntity != null && !userEntity.isDeleted();
 
-        return repo.findById(id).isPresent();
     }
 
     public UserEntity getById(Long id){

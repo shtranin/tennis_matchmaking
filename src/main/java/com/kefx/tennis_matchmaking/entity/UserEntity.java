@@ -4,8 +4,8 @@ package com.kefx.tennis_matchmaking.entity;
 import com.kefx.tennis_matchmaking.Bot;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 
 @Entity()
@@ -14,6 +14,11 @@ public class UserEntity {
     private Long id;
     private String name;
     private int rating;
+    private boolean isDeleted;
+
+
+    @OneToMany
+    private List<GameEntity> games;
 
     public int getRating() {
         return rating;
@@ -32,6 +37,13 @@ public class UserEntity {
     }
     public Long getId() {
         return id;
+    }
+    public void setDeleted(){
+        isDeleted = true;
+    }
+    public void setIsNotDeleted(){isDeleted = false;}
+    public boolean isDeleted(){
+        return isDeleted;
     }
 
 

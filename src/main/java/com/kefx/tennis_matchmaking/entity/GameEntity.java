@@ -17,33 +17,28 @@ public class GameEntity {
     private int subtractedLoserRating;
     private Date date;
 
-    public GameEntity() {
-    }
 
     public UserEntity getWinner() {
         return winner;
     }
-
     public int getAccruedWinnerRating() {
         return accruedWinnerRating;
     }
-
     public UserEntity getLoser() {
         return loser;
     }
-
     public int getSubtractedLoserRating() {
         return subtractedLoserRating;
     }
-
     public Date getDate() {
         return date;
     }
-
     public Long getId() {
         return id;
     }
 
+    public GameEntity() {
+    }
     public GameEntity(UserEntity winner, UserEntity loser, int[] accruedRating, Date date) {
         this.winner = winner;
         this.loser = loser;

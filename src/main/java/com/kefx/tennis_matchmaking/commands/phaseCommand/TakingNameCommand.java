@@ -40,6 +40,12 @@ public class TakingNameCommand implements Command {
         }
 
         UserEntity userEntity = userDBService.getById(userId);
+        if(userEntity == null){
+            userEntity = UserEntity.getNewEntityFromUpdate(update);
+        }
+        if(userEntity.isDeleted()){
+            userEntity.setIsNotDeleted();
+        }
         userEntity.setName(proposedName);
 
         userDBService.saveUserEntity(userEntity);
