@@ -3,6 +3,7 @@ package com.kefx.tennis_matchmaking.commands.base;
 import com.google.common.collect.ImmutableMap;
 import com.kefx.tennis_matchmaking.commands.phaseCommand.TakingNameCommand;
 import com.kefx.tennis_matchmaking.commands.fromButtons.*;
+import com.kefx.tennis_matchmaking.commands.phaseCommand.UserIsBusy;
 import com.kefx.tennis_matchmaking.commands.specific_commands.*;
 import com.kefx.tennis_matchmaking.documents.UserStatementDocument;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,9 @@ public class CommandContainer {
                             SettingsButtonCommand settingsButtonCommand, DeleteUserButton deleteUserButton,
                             FinallyDeleteUser finallyDeleteUser, RenameButton renameButton, InfoCommand infoCommand,
                             CreateGameButton createGameButton, RivalButton rivalButton, PlayerButton playerButton,
-                            WinnerButton winnerButton, CancelGameResultButton cancelGameResultButton,AcceptGameResultButton acceptGameResultButton,
-                            NothingCommand nothingCommand,MyStatisticButton myStatisticButton,RatingButton ratingButton,
-                            GameDetailsCommand gameDetailsCommand) {
+                            WinnerButton winnerButton, CancelGameResultButton cancelGameResultButton, AcceptGameResultButton acceptGameResultButton,
+                            NothingCommand nothingCommand, MyStatisticButton myStatisticButton, RatingButton ratingButton,
+                            GameDetailsCommand gameDetailsCommand, UserIsBusy userIsBusy) {
 
         this.unknownCommand = unknownCommand;
         container = ImmutableMap.<String, Command>builder()
@@ -47,6 +48,7 @@ public class CommandContainer {
                 .put(CommandType.statistic.getName(),myStatisticButton)
                 .put(CommandType.rating.getName(),ratingButton)
                 .put(CommandType.gameDetails.getName(),gameDetailsCommand)
+                .put(CommandType.busy.getName(),userIsBusy)
                 .build();
     }
 

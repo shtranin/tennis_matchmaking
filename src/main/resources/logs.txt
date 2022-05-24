@@ -1423,3 +1423,62 @@ Daniil /showTable 2022/05/21 00:51:02 \
 Daniil /menu 2022/05/21 00:51:07 \
 Daniil /statistic 2022/05/21 00:51:09 \
 Daniil /menu 2022/05/21 00:51:18 \
+Atharv Dhage /start 2022/05/24 14:19:46 \
+Daniil /statistic 2022/05/24 14:21:55 \
+Daniil /menu 2022/05/24 14:22:33 \
+Daniil /statistic 2022/05/24 14:22:36 \
+Daniil /menu 2022/05/24 14:22:37 \
+Daniil /start 2022/05/24 14:23:00 \
+Daniil /createGame 2022/05/24 14:23:12 \
+Daniil rival 7 2022/05/24 14:23:13 \
+Daniil winner 325533383 daniil 7 uzb 2022/05/24 14:23:23 \
+Daniil /menu 2022/05/24 14:23:37 \
+Daniil /rating 2022/05/24 14:30:53 \
+Daniil /settings 2022/05/24 14:30:56 \
+Daniil /menu 2022/05/24 14:30:58 \
+Daniil /showTable 2022/05/24 14:31:00 \
+Daniil player 843236890 2022/05/24 14:31:03 \
+Daniil /showTable 2022/05/24 14:32:02 \
+Daniil /menu 2022/05/24 14:32:03 \
+Daniil /createGame 2022/05/24 14:32:10 \
+Daniil rival 7 2022/05/24 14:32:24 \
+Daniil winner 325533383 daniil 7 uzb 2022/05/24 14:32:27 \
+Daniil /menu 2022/05/24 14:32:41 \
+Irina /rating 2022/05/24 14:34:54 \
+Daniil /createGame 2022/05/24 14:35:04 \
+Daniil rival 843236890 2022/05/24 14:35:05 \
+Daniil winner 325533383 daniil 843236890 irina 2022/05/24 14:35:07 \
+Irina 1 2022/05/24 14:35:23 \
+Irina /menu 2022/05/24 14:35:27 \
+Daniil 1 2022/05/24 14:35:38 \
+Daniil /menu 2022/05/24 14:35:40 \
+Irina /menu 2022/05/24 14:37:56 \
+Irina /menu 2022/05/24 14:37:59 \
+Daniil /menu 2022/05/24 14:38:08 \
+Daniil /menu 2022/05/24 14:39:26 \
+Irina /menu 2022/05/24 14:39:35 \
+Daniil /menu 2022/05/24 14:40:45 \
+Daniil /createGame 2022/05/24 14:40:48 \
+Daniil rival 843236890 2022/05/24 14:49:42 \
+Daniil /menu 2022/05/24 14:49:49 \
+Daniil /createGame 2022/05/24 14:50:10 \
+Daniil rival 843236890 2022/05/24 14:50:12 \
+Daniil /menu 2022/05/24 14:50:29 \
+Daniil /createGame 2022/05/24 14:50:32 \
+Daniil rival 843236890 2022/05/24 14:50:34 \
+Daniil /menu 2022/05/24 14:51:43 \
+Daniil /createGame 2022/05/24 14:51:45 \
+Daniil rival 843236890 2022/05/24 14:51:47 \
+Daniil /menu 2022/05/24 14:51:59 \
+Irina /menu 2022/05/24 14:52:20 \
+Irina cancel 325533383 843236890 2022/05/24 14:52:25 \
+Irina accept 325533383 843236890 2022/05/24 14:52:59 \
+Irina cancel 325533383 843236890 2022/05/24 15:17:59 \
+Daniil /createGame 2022/05/24 16:35:45 \
+Daniil rival 843236890 2022/05/24 16:35:48 \
+Daniil /menu 2022/05/24 16:35:51 \
+Irina /menu 2022/05/24 16:36:21 \
+Irina accept 325533383 843236890 2022/05/24 16:36:51 \
+Daniil /createGame 2022/05/24 16:37:10 \
+Daniil rival 843236890 2022/05/24 16:37:12 \
+Daniil /menu 2022/05/24 16:37:13 \

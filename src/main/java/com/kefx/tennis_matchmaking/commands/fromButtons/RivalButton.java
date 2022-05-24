@@ -3,6 +3,8 @@ package com.kefx.tennis_matchmaking.commands.fromButtons;
 import com.kefx.tennis_matchmaking.Bot;
 import com.kefx.tennis_matchmaking.commands.base.Command;
 import com.kefx.tennis_matchmaking.entity.UserEntity;
+import com.kefx.tennis_matchmaking.repo.UserStatementRepo;
+import com.kefx.tennis_matchmaking.services.forCommands.SendMessageService;
 import com.kefx.tennis_matchmaking.services.other.DeleteMessageService;
 import com.kefx.tennis_matchmaking.services.withDB.UpdateLastReceivedMessageService;
 import com.kefx.tennis_matchmaking.services.withDB.UserDBService;
@@ -25,14 +27,18 @@ import java.util.List;
 public class RivalButton implements Command {
     private final Bot bot;
     private final DeleteMessageService deleteMessageService;
+    private final SendMessageService sendMessageService;
     private final UserDBService userDBService;
     private final UpdateLastReceivedMessageService updateLastReceivedMessageService;
+    private final UserStatementRepo userStatementRepo;
     @Autowired
-    public RivalButton(@Lazy Bot bot, DeleteMessageService deleteMessageService, UserDBService userDBService, UpdateLastReceivedMessageService updateLastReceivedMessageService) {
+    public RivalButton(@Lazy Bot bot, DeleteMessageService deleteMessageService, SendMessageService sendMessageService, UserDBService userDBService, UpdateLastReceivedMessageService updateLastReceivedMessageService, UserStatementRepo userStatementRepo) {
         this.bot = bot;
         this.deleteMessageService = deleteMessageService;
+        this.sendMessageService = sendMessageService;
         this.userDBService = userDBService;
         this.updateLastReceivedMessageService = updateLastReceivedMessageService;
+        this.userStatementRepo = userStatementRepo;
     }
 
     @Override
@@ -40,26 +46,33 @@ public class RivalButton implements Command {
 
         Long userId = Bot.getPlayerIdFromUpdate(update);
         String chatId = Bot.getChatIdFromUpdate(update);
+
+        Long rivalId = Long.parseLong(update.getCallbackQuery().getData().split(" ")[1]);
+        UserEntity rival = userDBService.getById(rivalId);
+        String rivalName = rival.getName();
+        if(userStatementRepo.findByOwnerId(rivalId) != null){
+            sendMessageService.sendMessage(userId,rivalName + " не может начать новую рейтинговую игру, пока не завершил прошлую");
+            return;
+        }
+
         deleteMessageService.deleteMessage(userId);
         List<List<InlineKeyboardButton>> overList = new ArrayList<>();
         List<InlineKeyboardButton> listWithPlayers = new ArrayList<>();
         List<InlineKeyboardButton> listWithCancelButton = new ArrayList<>();
 
-        UserEntity firstPlayer = userDBService.getById(userId);
-        String firstPlayerName = firstPlayer.getName();
-        String firstPlayerId = firstPlayer.getId().toString();
-        UserEntity secondPlayer = userDBService.getById((Long.parseLong(update.getCallbackQuery().getData().split(" ")[1])));
-        String secondPlayerName = secondPlayer.getName();
-        String secondPlayerId = secondPlayer.getId().toString();
+        UserEntity player = userDBService.getById(userId);
+        String playerName = player.getName();
+        String playerId = player.getId().toString();
+
 
 
         InlineKeyboardButton firstPlayedButton = new InlineKeyboardButton();
-        firstPlayedButton.setText(firstPlayerName);
-        firstPlayedButton.setCallbackData("winner " + firstPlayerId + " " + firstPlayerName + " " + secondPlayerId + " " + secondPlayerName);
+        firstPlayedButton.setText(playerName);
+        firstPlayedButton.setCallbackData("winner " + playerId + " " + playerName + " " + rivalId + " " + rivalName);
 
         InlineKeyboardButton secondPlayerButton = new InlineKeyboardButton();
-        secondPlayerButton.setText(secondPlayerName);
-        secondPlayerButton.setCallbackData("winner " + secondPlayerId + " " + secondPlayerName + " " + firstPlayerId + " " + firstPlayerName);
+        secondPlayerButton.setText(rivalName);
+        secondPlayerButton.setCallbackData("winner " + rivalId + " " + rivalName + " " + playerId + " " + playerName);
 
         InlineKeyboardButton cancelButton = new InlineKeyboardButton();
         cancelButton.setText("Отменить матч");

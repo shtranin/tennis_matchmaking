@@ -21,7 +21,8 @@ public enum CommandType {
     nothing("nothing"),
     statistic("/statistic"),
     rating("/rating"),
-    gameDetails("/gameDetails");
+    gameDetails("/gameDetails"),
+    busy("busy1");
 
 
 

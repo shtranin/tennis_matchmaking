@@ -4,6 +4,7 @@ import com.kefx.tennis_matchmaking.Bot;
 import com.kefx.tennis_matchmaking.commands.base.Command;
 import com.kefx.tennis_matchmaking.services.forCommands.SendMessageService;
 import com.kefx.tennis_matchmaking.services.other.DeleteMessageService;
+import com.kefx.tennis_matchmaking.services.other.UserBusynessManager;
 import com.kefx.tennis_matchmaking.services.withDB.UpdateLastReceivedMessageService;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
@@ -20,12 +21,14 @@ import java.util.List;
 @Component
 public class WinnerButton implements Command {
     private final Bot bot;
+    private final UserBusynessManager userBusynessManager;
     private final SendMessageService sendMessageService;
     private final DeleteMessageService deleteMessageService;
     private final UpdateLastReceivedMessageService updateLastReceivedMessageService;
 
-    public WinnerButton(@Lazy Bot bot, SendMessageService sendMessageService, DeleteMessageService deleteMessageService, UpdateLastReceivedMessageService updateLastReceivedMessageService) {
+    public WinnerButton(@Lazy Bot bot, UserBusynessManager userBusynessManager, SendMessageService sendMessageService, DeleteMessageService deleteMessageService, UpdateLastReceivedMessageService updateLastReceivedMessageService) {
         this.bot = bot;
+        this.userBusynessManager = userBusynessManager;
         this.sendMessageService = sendMessageService;
         this.deleteMessageService = deleteMessageService;
         this.updateLastReceivedMessageService = updateLastReceivedMessageService;
@@ -69,6 +72,8 @@ public class WinnerButton implements Command {
                 deleteMessageService.deleteMessage(winnerId);
                 sendMessageService.sendMessage(userId, "Ваша игра будет зарегистрирована и рейтинг будет расчитан после того, как  " + loserName + "  подтвердит поражение");
             }
+            userBusynessManager.makeUsersBusy(winnerId,loserId);
+
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }

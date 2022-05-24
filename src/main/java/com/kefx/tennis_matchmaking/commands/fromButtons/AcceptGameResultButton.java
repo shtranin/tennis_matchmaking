@@ -6,7 +6,7 @@ import com.kefx.tennis_matchmaking.entity.UserEntity;
 import com.kefx.tennis_matchmaking.services.forCommands.CreateGamesService;
 import com.kefx.tennis_matchmaking.services.forCommands.SendMessageService;
 import com.kefx.tennis_matchmaking.services.other.DeleteMessageService;
-import com.kefx.tennis_matchmaking.services.other.UpdatePlayerRatingsService;
+import com.kefx.tennis_matchmaking.services.other.UserBusynessManager;
 import com.kefx.tennis_matchmaking.services.withDB.UserDBService;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +15,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 @Component
 @Transactional
 public class AcceptGameResultButton implements Command {
+    private final UserBusynessManager userBusynessManager;
     private final CreateGamesService createGameService;
     private final UserDBService userDBService;
     private final DeleteMessageService deleteMessageService;
@@ -22,7 +23,8 @@ public class AcceptGameResultButton implements Command {
     private final Redirector redirector;
 
 
-    public AcceptGameResultButton(CreateGamesService createGameService, UserDBService userDBService, DeleteMessageService deleteMessageService, SendMessageService sendMessageService, Redirector redirector) {
+    public AcceptGameResultButton(UserBusynessManager userBusynessManager, CreateGamesService createGameService, UserDBService userDBService, DeleteMessageService deleteMessageService, SendMessageService sendMessageService, Redirector redirector) {
+        this.userBusynessManager = userBusynessManager;
         this.createGameService = createGameService;
         this.userDBService = userDBService;
 
@@ -43,6 +45,8 @@ public class AcceptGameResultButton implements Command {
         UserEntity winner = userDBService.getById(winnerId);
         UserEntity loser = userDBService.getById(loserId);
         int[] accruedRatings = createGameService.createGame(winner, loser);
+
+        userBusynessManager.makeUsersFree(winnerId,loserId);
 
         deleteMessageService.deleteMessage(winnerId);
         deleteMessageService.deleteMessage(loserId);

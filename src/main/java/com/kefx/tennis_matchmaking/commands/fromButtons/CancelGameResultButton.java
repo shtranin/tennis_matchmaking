@@ -1,10 +1,11 @@
 package com.kefx.tennis_matchmaking.commands.fromButtons;
 
-import com.kefx.tennis_matchmaking.Bot;
 import com.kefx.tennis_matchmaking.commands.base.Command;
 import com.kefx.tennis_matchmaking.commands.base.Redirector;
 import com.kefx.tennis_matchmaking.services.forCommands.SendMessageService;
 import com.kefx.tennis_matchmaking.services.other.DeleteMessageService;
+import com.kefx.tennis_matchmaking.services.other.UserBusynessManager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
@@ -12,11 +13,13 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 public class CancelGameResultButton implements Command {
     private final DeleteMessageService deleteMessageService;
     private final SendMessageService sendMessageService;
+    private final UserBusynessManager userBusynessManager;
     private final Redirector redirector;
-
-    public CancelGameResultButton(DeleteMessageService deleteMessageService, SendMessageService sendMessageService, Redirector redirector) {
+    @Autowired
+    public CancelGameResultButton(DeleteMessageService deleteMessageService, SendMessageService sendMessageService, UserBusynessManager userBusynessManager, Redirector redirector) {
         this.deleteMessageService = deleteMessageService;
         this.sendMessageService = sendMessageService;
+        this.userBusynessManager = userBusynessManager;
         this.redirector = redirector;
     }
 
@@ -32,6 +35,8 @@ public class CancelGameResultButton implements Command {
 
         sendMessageService.sendMessage(loserId,"Вы не подтвердили поражение " + winnerName);
         sendMessageService.sendMessage(winnerId,loserName + " не подтвердил поражение Вам");
+
+        userBusynessManager.makeUsersFree(winnerId,loserId);
 
         deleteMessageService.banClearing(winnerId);
         deleteMessageService.banClearing(loserId);

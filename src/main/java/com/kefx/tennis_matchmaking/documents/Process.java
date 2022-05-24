@@ -2,7 +2,8 @@ package com.kefx.tennis_matchmaking.documents;
 
 public enum Process {
     registration("reg"),
-    choosingUser("choosing");
+    choosingUser("choosing"),
+    busy("busy");
 
 
     private String name;
