@@ -1,9 +1,9 @@
 package com.kefx.tennis_matchmaking.services.forCommands;
 
 import com.kefx.tennis_matchmaking.Bot;
-import com.kefx.tennis_matchmaking.commands.base.Redirector;
 import com.kefx.tennis_matchmaking.entity.UserEntity;
 import com.kefx.tennis_matchmaking.repo.UserStatementRepo;
+import com.kefx.tennis_matchmaking.services.other.DeleteMessageService;
 import com.kefx.tennis_matchmaking.services.withDB.UpdateLastReceivedMessageService;
 import com.kefx.tennis_matchmaking.services.withDB.UserDBService;
 
@@ -23,18 +23,18 @@ import java.util.List;
 @Service
 public class ShowTableService {
     private final Bot bot;
+    private final DeleteMessageService deleteMessageService;
     private final UserDBService userDBService;
     private final UpdateLastReceivedMessageService updateLastReceivedMessageService;
-    private final Redirector redirector;
     private final SendMessageService sendMessageService;
     private final UserStatementRepo userStatementRepo;
 
     @Autowired
-    public ShowTableService(@Lazy Bot bot, UserDBService userDBService, UpdateLastReceivedMessageService updateLastReceivedMessageService, Redirector redirector, SendMessageService sendMessageService, UserStatementRepo userStatementRepo) {
+    public ShowTableService(@Lazy Bot bot, DeleteMessageService deleteMessageService, UserDBService userDBService, UpdateLastReceivedMessageService updateLastReceivedMessageService, SendMessageService sendMessageService, UserStatementRepo userStatementRepo) {
         this.bot = bot;
+        this.deleteMessageService = deleteMessageService;
         this.userDBService = userDBService;
         this.updateLastReceivedMessageService = updateLastReceivedMessageService;
-        this.redirector = redirector;
         this.sendMessageService = sendMessageService;
         this.userStatementRepo = userStatementRepo;
     }
@@ -55,6 +55,7 @@ public class ShowTableService {
         if(allUsers.isEmpty()){
             sendMessageService.sendMessage(userId,"Таблица пока пуста");
         }else{
+            deleteMessageService.deleteMessage(Bot.getPlayerIdFromUpdate(update));
             List<List<InlineKeyboardButton>> overList = new ArrayList<>();
             for(UserEntity entity : allUsers){
                 if(entity.getId().equals(userId)  && textOntable.equals("Выберите соперника") || entity.isDeleted()){

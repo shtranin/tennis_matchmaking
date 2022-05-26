@@ -17,7 +17,7 @@ public class UserEntity {
     private boolean isDeleted;
 
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<GameEntity> games;
 
     public int getRating() {

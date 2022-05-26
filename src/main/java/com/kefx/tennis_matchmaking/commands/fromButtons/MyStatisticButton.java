@@ -42,8 +42,13 @@ public class MyStatisticButton implements Command {
 
     @Override
     public void execute(Update update) {
+        Long userId = Bot.getPlayerIdFromUpdate(update);
         UserEntity currentUser = getUserEntityFromUpdate(update);
-        Long userId = currentUser.getId();
+        if(currentUser == null){
+            sendMessageService.sendMessage(userId,"Вы еще не имели рейтинговых игр");
+            return;
+        }
+
         List<GameEntity> list = gameDBService.getAllGamesById(currentUser);
         if(list.isEmpty()){
             sendMessageService.sendMessage(userId,"Вы еще не имели рейтинговых игр");

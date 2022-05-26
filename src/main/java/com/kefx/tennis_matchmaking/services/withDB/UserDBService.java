@@ -7,6 +7,7 @@ import com.kefx.tennis_matchmaking.repo.UserRepository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -31,12 +32,13 @@ public class UserDBService {
     }
 
     public boolean isIdPresentAndNotDeleted(Long id){
-            UserEntity userEntity = repo.getById(id);
-        return userEntity != null && !userEntity.isDeleted();
+            Optional<UserEntity> optional = repo.findById(id);
+        return optional.isPresent() && !optional.get().isDeleted();
 
     }
 
     public UserEntity getById(Long id){
-        return repo.getById(id);
+        Optional<UserEntity> optional = repo.findById(id);
+        return optional.orElse(null);
     }
 }

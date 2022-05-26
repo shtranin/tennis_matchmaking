@@ -1482,3 +1482,124 @@ Irina accept 325533383 843236890 2022/05/24 16:36:51 \
 Daniil /createGame 2022/05/24 16:37:10 \
 Daniil rival 843236890 2022/05/24 16:37:12 \
 Daniil /menu 2022/05/24 16:37:13 \
+Daniil /menu 2022/05/26 02:54:10 \
+Daniil /start 2022/05/26 02:54:18 \
+Daniil /start 2022/05/26 02:54:35 \
+Daniil /settings 2022/05/26 02:54:40 \
+Daniil /menu 2022/05/26 02:54:45 \
+Daniil /menu 2022/05/26 03:06:30 \
+Daniil /start 2022/05/26 03:12:59 \
+Daniil /showTable 2022/05/26 03:13:05 \
+Daniil /menu 2022/05/26 03:13:09 \
+Irina /start 2022/05/26 14:04:07 \
+Irina /showTable 2022/05/26 14:04:14 \
+Irina player 21381613 2022/05/26 14:04:19 \
+Irina /menu 2022/05/26 14:04:24 \
+Irina /statistic 2022/05/26 14:04:27 \
+Irina /statistic 2022/05/26 14:07:33 \
+Irina /createGame 2022/05/26 14:08:21 \
+Irina /settings 2022/05/26 14:08:41 \
+Irina /rename 2022/05/26 14:08:43 \
+Irina /deleteUser 2022/05/26 14:08:53 \
+Irina /menu 2022/05/26 14:09:05 \
+Irina /createGame 2022/05/26 14:09:50 \
+Irina /statistic 2022/05/26 14:09:57 \
+Irina /createGame 2022/05/26 14:16:27 \
+Irina /showTable 2022/05/26 14:16:35 \
+Irina /menu 2022/05/26 14:16:37 \
+Irina /createGame 2022/05/26 14:16:39 \
+Irina /registration 2022/05/26 14:16:41 \
+Irina ири 2022/05/26 14:16:48 \
+Irina /createGame 2022/05/26 14:16:51 \
+Irina /menu 2022/05/26 14:16:53 \
+Irina /settings 2022/05/26 14:16:55 \
+Irina /deleteUser 2022/05/26 14:16:56 \
+Irina /finallyDelete 2022/05/26 14:16:58 \
+Irina /createGame 2022/05/26 14:17:01 \
+Irina /registration 2022/05/26 14:17:04 \
+Irina ирк 2022/05/26 14:17:09 \
+Irina /createGame 2022/05/26 14:17:11 \
+Irina /menu 2022/05/26 14:17:13 \
+Irina /statistic 2022/05/26 14:17:21 \
+Irina /settings 2022/05/26 14:17:24 \
+Irina /deleteUser 2022/05/26 14:17:26 \
+Irina /finallyDelete 2022/05/26 14:17:28 \
+Irina /statistic 2022/05/26 14:17:31 \
+Irina /statistic 2022/05/26 14:20:10 \
+Irina /statistic 2022/05/26 14:31:13 \
+Irina /statistic 2022/05/26 14:31:19 \
+Irina /createGame 2022/05/26 14:31:24 \
+Irina /rating 2022/05/26 14:31:29 \
+Irina /info 2022/05/26 14:31:39 \
+Irina /settings 2022/05/26 14:31:48 \
+Irina /rename 2022/05/26 14:31:50 \
+Irina /deleteUser 2022/05/26 14:32:04 \
+Irina /menu 2022/05/26 14:32:25 \
+Irina /createGame 2022/05/26 14:34:19 \
+Irina /registration 2022/05/26 14:34:21 \
+Irina ир 2022/05/26 14:34:24 \
+Irina /createGame 2022/05/26 14:34:26 \
+Daniil /menu 2022/05/26 14:34:41 \
+Daniil /registration 2022/05/26 14:34:45 \
+Daniil kefx 2022/05/26 14:34:48 \
+Irina /menu 2022/05/26 14:34:51 \
+Irina /createGame 2022/05/26 14:34:58 \
+Irina rival 325533383 2022/05/26 14:35:00 \
+Irina winner 325533383 kefx 843236890 ир 2022/05/26 14:35:07 \
+Irina accept 325533383 843236890 2022/05/26 14:35:14 \
+Irina /createGame 2022/05/26 14:35:24 \
+Irina rival 325533383 2022/05/26 14:35:26 \
+Irina winner 325533383 kefx 843236890 ир 2022/05/26 14:35:31 \
+Irina accept 325533383 843236890 2022/05/26 14:35:37 \
+Irina /createGame 2022/05/26 14:35:45 \
+Irina rival 325533383 2022/05/26 14:35:49 \
+Irina winner 325533383 kefx 843236890 ир 2022/05/26 14:35:51 \
+Irina cancel 325533383 843236890 2022/05/26 14:35:54 \
+Irina /menu 2022/05/26 14:38:20 \
+Irina accept 325533383 843236890 2022/05/26 14:38:25 \
+Irina /createGame 2022/05/26 14:38:28 \
+Irina rival 325533383 2022/05/26 14:38:30 \
+Irina winner 325533383 kefx 843236890 ир 2022/05/26 14:38:32 \
+Irina cancel 325533383 843236890 2022/05/26 14:38:33 \
+Daniil /showTable 2022/05/26 14:39:32 \
+Daniil /menu 2022/05/26 14:39:35 \
+Irina /rating 2022/05/26 14:40:14 \
+axtox /showTable 2022/05/26 14:41:16 \
+axtox /menu 2022/05/26 14:41:25 \
+axtox /registration 2022/05/26 14:41:27 \
+axtox axtox 2022/05/26 14:41:32 \
+axtox /createGame 2022/05/26 14:41:34 \
+axtox rival 325533383 2022/05/26 14:41:36 \
+axtox winner 21381613 axtox 325533383 kefx 2022/05/26 14:41:40 \
+Daniil accept 21381613 325533383 2022/05/26 14:42:04 \
+axtox /createGame 2022/05/26 14:42:14 \
+axtox rival 325533383 2022/05/26 14:42:16 \
+axtox winner 325533383 kefx 21381613 axtox 2022/05/26 14:42:17 \
+axtox accept 325533383 21381613 2022/05/26 14:42:20 \
+Daniil /createGame 2022/05/26 14:42:29 \
+Daniil rival 21381613 2022/05/26 14:42:30 \
+Daniil winner 325533383 kefx 21381613 axtox 2022/05/26 14:42:35 \
+axtox accept 325533383 21381613 2022/05/26 14:44:15 \
+Daniil /showTable 2022/05/26 14:47:17 \
+Daniil player 21381613 2022/05/26 14:47:21 \
+Daniil /showTable 2022/05/26 14:47:24 \
+Daniil /menu 2022/05/26 14:47:25 \
+Daniil /createGame 2022/05/26 14:47:26 \
+Daniil rival 21381613 2022/05/26 14:47:27 \
+Daniil winner 21381613 axtox 325533383 kefx 2022/05/26 14:47:29 \
+Daniil accept 21381613 325533383 2022/05/26 14:47:30 \
+Daniil /createGame 2022/05/26 14:47:35 \
+Daniil rival 21381613 2022/05/26 14:47:36 \
+Daniil winner 21381613 axtox 325533383 kefx 2022/05/26 14:47:39 \
+Daniil accept 21381613 325533383 2022/05/26 14:47:41 \
+Daniil /showTable 2022/05/26 14:48:02 \
+Daniil /menu 2022/05/26 14:48:10 \
+Daniil /createGame 2022/05/26 14:48:12 \
+Daniil rival 21381613 2022/05/26 14:48:14 \
+Daniil winner 325533383 kefx 21381613 axtox 2022/05/26 14:48:18 \
+axtox accept 325533383 21381613 2022/05/26 14:48:33 \
+Daniil /showTable 2022/05/26 14:48:40 \
+Daniil /createGame 2022/05/26 17:14:55 \
+Daniil rival 21381613 2022/05/26 17:14:58 \
+Daniil winner 325533383 kefx 21381613 axtox 2022/05/26 17:15:02 \
+Daniil /createGame 2022/05/26 17:15:04 \

@@ -21,7 +21,6 @@ public class ShowTableCommand implements Command {
 
     @Override
     public void execute(Update update) {
-        deleteMessageService.deleteMessage(Bot.getPlayerIdFromUpdate(update));
         showTableService.showTable(update);
 
     }
