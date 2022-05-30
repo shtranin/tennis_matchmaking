@@ -10,7 +10,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 @Component
-public class Logger {
+public class    Logger {
 
     public void log(Update update) {
         String name;
@@ -27,22 +27,22 @@ public class Logger {
             return;
         }
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM HH:mm");
         Date date = new Date();
 
         FileOutputStream fop = null;
         File file;
 
         try {
-            file = new File("C:\\Users\\Kefx\\Desktop\\projects\\tennis_matchmaking\\src\\main\\resources\\logs.txt");
+            file = new File("/app/logs/logs.txt");
             fop = new FileOutputStream(file,true);
 
-            // if file doesnt exists, then create it
+
             if (!file.exists()) {
                 file.createNewFile();
             }
 
-            // get the content in bytes
+
             String content = name + " " + message  + " " + dateFormat.format(date) + " \\\n";
             byte[] contentInBytes = content.getBytes();
 
@@ -50,10 +50,8 @@ public class Logger {
             fop.flush();
             fop.close();
 
-           // System.out.println("Done");
-
         } catch (IOException e) {
-            e.printStackTrace();
+           e.printStackTrace();
         } finally {
             try {
                 if (fop != null) {
