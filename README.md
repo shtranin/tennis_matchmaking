@@ -1,4 +1,4 @@
-Project provides opportinity to count rating and build table of players using telegram bot. My bot styled for table tennis, you can find it here @kefx_bot.
+Project provides opportinity to count rating and build table of players using telegram bot. My bot styled for table tennis, you can find it here @fitness_one_matchmaking_bot
 
 # How it works
 Whole user experience contains from pressing buttons. Player just needs to send /start command to get main menu of application.After any operation bot will send you main menu again automatically.
